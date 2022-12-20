@@ -1,12 +1,10 @@
 Package: portrobbo
-Title: What the Package Does (One Line, Title Case)
+Title: Package to support my portfolio assignments
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Mirthe", "Klaassen", , "mirtheklaassen@outlook.com", role = c("aut", "cre"))
+Description: Currently contains a function to save a dataframe as both a csv and rds. In progress.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
