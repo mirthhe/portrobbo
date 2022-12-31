@@ -3,7 +3,6 @@
 export("%>%")
 export(graph_cap)
 export(graph_jitter)
-export(load_libraries)
 export(save_csv_rds)
 importFrom(ggplot2,position_jitter)
 importFrom(magrittr,"%>%")
