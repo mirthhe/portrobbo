@@ -1,5 +1,5 @@
 Package: portrobbo
-Title: Package to support my portfolio assignments
+Title: Package with useful functions to support the DSFB26V-20_workflows course portfolio assignments
 Version: 0.0.0.9000
 Authors@R: 
     person("Mirthe", "Klaassen", , "mirtheklaassen@outlook.com", role = c("aut", "cre"))
@@ -8,8 +8,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
-Imports: 
+Imports:
+    ggplot2,
     magrittr,
+    stringr,
     utils
 Suggests: 
     testthat (>= 3.0.0)
