@@ -46,7 +46,7 @@ library(dplyr)
 covid19 <- read.csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
 ```
 
-# uniq_val
+## uniq_val
 
 The first function focuses on the data inspection. When working with a
 big dataset it can be used to check the amount of unique values within a
@@ -72,7 +72,7 @@ same amount of unique values, by doing the following.
 uniq_val(covid19$countriesAndTerritories) == uniq_val(covid19$geoId)
 ```
 
-# save_csv_rds
+## save_csv_rds
 
 After inspecting the data you might have made a few changes in the R
 object, like making it tidy or extracting data that is the most useful
@@ -95,7 +95,7 @@ following.
 save_csv_rds(covid19_2020, "covid19_2020")
 ```
 
-# graph_jitter and graph_cap
+## graph_jitter and graph_cap
 
 With the data inspected, extracted and saved, graphs can be made. The
 ggplot2 package contains all the necessary functions to make a graph.

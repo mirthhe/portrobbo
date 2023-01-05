@@ -45,7 +45,7 @@ library(dplyr)
 covid19 <- read.csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
 ```
 
-# uniq_val
+## uniq_val
 
 The first function focuses on the data inspection. When working with a big dataset it can be used to check the amount of unique values within a column. For example, the dataset covid19 is all about the COVID19 cases and related deaths. The dataset has 28729 observations. Since there are multiple observations per country it is important to know how many countries are looked at. This is where uniq_val() comes in. The only input for the function is the column of which the amount of unique values should be checked. For our example it would be used as follows.
 
@@ -61,7 +61,7 @@ The 28729 observations are divided over 30 different countries. Good to know! Th
 uniq_val(covid19$countriesAndTerritories) == uniq_val(covid19$geoId)
 ```
 
-# save_csv_rds
+## save_csv_rds
 
 After inspecting the data you might have made a few changes in the R object, like making it tidy or extracting data that is the most useful as shown in the following code. 
 
@@ -78,7 +78,7 @@ It is important to save your changes for later reference. A good way to do that 
 save_csv_rds(covid19_2020, "covid19_2020")
 ```
 
-# graph_jitter and graph_cap
+## graph_jitter and graph_cap
 
 With the data inspected, extracted and saved, graphs can be made. The ggplot2 package contains all the necessary functions to make a graph. It's functions have a lot of different input options for a lot of different graphs. This means the code for a simple graph can become quite long. This is where graph_jitter() and graph_cap() come in. The ggplot2 function position_jitter() uses multiple inputs to create a slight jitter to the datapoints. This is useful when data overlap makes the graph hard to read. The graph_jitter() function simplifies this function by only needing one input which will work for both the height and width of the jitter. It also sets the see so keep jitter consistent throughout the analysis. 
 
