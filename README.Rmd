@@ -29,7 +29,7 @@ devtools::install_github("mirthhe/portrobbo")
 
 # Functions
 
-The package contains four functions:
+The package contains four different functions:
 <ul>
 <li>uniq_val</li>
 <li>save_csv_rds</li>
