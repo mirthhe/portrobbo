@@ -15,3 +15,6 @@ Caption that fits well in the graph
 \description{
 graph_cap
 }
+\examples{
+graph_cap("Figure 1. The caption can include any string of any length and will be shortened to a length suitable for the size of a graph.")
+}

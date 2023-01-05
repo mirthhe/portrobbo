@@ -15,3 +15,6 @@ Standard input for geom_point's position
 \description{
 graph_jitter
 }
+\examples{
+graph_jitter(0.2)
+}

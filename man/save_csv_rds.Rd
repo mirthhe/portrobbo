@@ -20,6 +20,5 @@ A csv and rds file
 save_csv_rds
 }
 \examples{
-mydata <- data.frame(col1 = c("val1", "val2", "val3"), col2 = c("val1", "val2", "val3"))
-save_csv_rds(mydata, "mydata")
+save_csv_rds(covid19, "covid19")
 }

@@ -7,11 +7,14 @@
 uniq_val(column)
 }
 \arguments{
-\item{column}{The column to count unique values on}
+\item{column}{The column to count unique values of}
 }
 \value{
 Number
 }
 \description{
 uniq_call
+}
+\examples{
+uniq_val(covid19$countryterritoryCode)
 }

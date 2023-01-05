@@ -1,9 +1,9 @@
 Package: portrobbo
-Title: Package with useful functions to support the DSFB26V-20_workflows course portfolio assignments
+Title: Portfolio support package
 Version: 0.0.0.9000
 Authors@R: 
     person("Mirthe", "Klaassen", , "mirtheklaassen@outlook.com", role = c("aut", "cre"))
-Description: Currently contains a function to save a dataframe as both a csv and rds. In progress.
+Description: Package with functions to support the DSFB26V-20_workflows course portfolio assignments. Currently contains a function to save a dataframe as both a csv and rds. In progress.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -14,5 +14,11 @@ Imports:
     stringr,
     utils
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true
+VignetteBuilder: knitr
