@@ -24,7 +24,7 @@ protein_stick <- function(mydata){
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of structures
-    m_set_style(style = m_style_stick()) %>%
+    m_set_style(style = m_style_stick(colorScheme = "ssPyMOL")) %>%
     # Rotate the scene by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }
