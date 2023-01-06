@@ -1,6 +1,6 @@
 #' prot_vis
 #'
-#' @param data File path to pdb file
+#' @param mydata File path to pdb file
 #' @param style "Cartoon", "spheres" or "sticks"
 #'
 #' @return 3D structural visualisation of the protein
@@ -9,9 +9,7 @@
 #'
 #' @examples
 #' prot_vis(kinesin, "cartoon")
-prot_vis <- function(data, style){
-  protein <- readLines(data)
-
+prot_vis <- function(mydata, style){
   r3dmol(
     viewer_spec = m_viewer_spec(
       # How far user can zoom in
@@ -21,7 +19,7 @@ prot_vis <- function(data, style){
       # Decrease quality to improve performance
       antialias = FALSE)) %>%
     # Adding the protein
-    m_add_model(data = protein, format = "pdb") %>%
+    m_add_model(data = mydata, format = "pdb") %>%
     # Center the protein at first
     m_zoom_to() %>%
     if (style == "cartoon"){
