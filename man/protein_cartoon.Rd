@@ -10,7 +10,7 @@ protein_cartoon(mydata)
 \item{mydata}{R object of PDB file made using readLines}
 }
 \value{
-3D structural visualization of the protein in cartoon style
+3D structural visualization of the protein in cartoon style with PyMOL colouring
 }
 \description{
 protein_cartoon

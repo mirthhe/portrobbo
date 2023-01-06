@@ -2,7 +2,7 @@
 #'
 #' @param mydata R object of PDB file made using readLines
 #'
-#' @return 3D structural visualization of the protein in cartoon style
+#' @return 3D structural visualization of the protein in cartoon style with PyMOL colouring
 #' @export
 #' @import r3dmol
 #'
@@ -16,21 +16,22 @@ protein_cartoon <- function(mydata){
       # How far user can zoom out
       upperZoomLimit = 400,
       # Decrease quality to improve performance
-      antialias = FALSE)) %>%
+      antialias = FALSE,
+      disableFog = TRUE)) %>%
     # Adding the protein
     m_add_model(data = mydata, format = "pdb") %>%
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of structures
-    m_set_style(style = m_style_cartoon(color = "#00cc96")) %>%
-    # Set style of specific selection (selecting by secondary)
+    m_set_style(style = m_style_cartoon(color = "#3aff3a")) %>%
+    # Set style of specific selection
     m_set_style(
-      sel = m_sel(ss = "s"),
-      style = m_style_cartoon(color = "#636efa", arrows = TRUE)) %>%
+      sel = m_sel(ss = "s"), # Style beta sheets
+      style = m_style_cartoon(color = "#3aff3a", arrows = TRUE)) %>%
     # Style the alpha helix
     m_set_style(
       sel = m_sel(ss = "h"), # Style alpha helix
-      style = m_style_cartoon(color = "#ff7f0e")) %>%
+      style = m_style_cartoon(color = "#3aff3a")) %>%
     # Rotate the scene by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }

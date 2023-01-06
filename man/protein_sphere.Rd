@@ -10,7 +10,7 @@ protein_sphere(mydata)
 \item{mydata}{R object of PDB file made using readLines}
 }
 \value{
-3D structural visualization of the protein in sphere style
+3D structural visualization of the protein in sphere style with PyMOL colouring
 }
 \description{
 protein_sphere
