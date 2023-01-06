@@ -4,10 +4,10 @@
 \alias{prot_vis}
 \title{prot_vis}
 \usage{
-prot_vis(data, style)
+prot_vis(mydata, style)
 }
 \arguments{
-\item{data}{File path to pdb file}
+\item{mydata}{File path to pdb file}
 
 \item{style}{"Cartoon", "spheres" or "sticks"}
 }
