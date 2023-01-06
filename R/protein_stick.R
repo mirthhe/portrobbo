@@ -16,7 +16,9 @@ protein_stick <- function(mydata){
       # How far user can zoom out
       upperZoomLimit = 400,
       # Decrease quality to improve performance
-      antialias = FALSE)) %>%
+      antialias = FALSE,
+      disableFog = TRUE,
+      backgroundColor = "black")) %>%
     # Adding the protein
     m_add_model(data = mydata, format = "pdb") %>%
     # Center the protein at first

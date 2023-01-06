@@ -17,7 +17,8 @@ protein_cartoon <- function(mydata){
       upperZoomLimit = 400,
       # Decrease quality to improve performance
       antialias = FALSE,
-      disableFog = TRUE)) %>%
+      disableFog = TRUE,
+      backgroundColor = "black")) %>%
     # Adding the protein
     m_add_model(data = mydata, format = "pdb") %>%
     # Center the protein at first
