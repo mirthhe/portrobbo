@@ -17,3 +17,12 @@
 #' }
 #' @source <https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv>
 "covid19"
+
+#' PDB file containing the information about 3COB (kinesin)
+#' PDB 3cob, kinesin
+#'
+#' @format PDB format
+#' A list with 28729 rows and 11 columns:
+#'
+#' @source <https://www.rcsb.org/structure/3COB>
+"kinesin"
