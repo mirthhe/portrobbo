@@ -34,7 +34,10 @@ The package contains four different functions:
 <li>uniq_val</li>
 <li>save_csv_rds</li>
 <li>graph_jitter</li>
-<li>graph_cap</li></ul>
+<li>graph_cap</li>
+<li>protein_cartoon</li>
+<li>protein_sticks</li>
+<li>protein_spheres</li></ul>
 
 To show the use of these functions we first load the needed packages and dataset.
 
@@ -94,3 +97,8 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
        caption = graph_cap("Figure 1. Scatterplot showing the COVID19 related deaths in summer of 2020 in Germany and France.")) +
   theme_minimal()
 ```
+
+## protein_cartoon, protein_sticks and protein_spheres
+
+The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. The colors are modelled after the PyMol default colors.
+
