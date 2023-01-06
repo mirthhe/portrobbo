@@ -1,4 +1,4 @@
-#' protein_sticks
+#' protein_stick
 #'
 #' @param mydata R object of PDB file made using readLines
 #'
@@ -7,8 +7,8 @@
 #' @import r3dmol
 #'
 #' @examples
-#' protein_sticks(kinesin)
-protein_sticks <- function(mydata){
+#' protein_stick(kinesin)
+protein_stick <- function(mydata){
   r3dmol(
     viewer_spec = m_viewer_spec(
       # How far user can zoom in
@@ -22,7 +22,7 @@ protein_sticks <- function(mydata){
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of structures
-    m_set_style(style = m_style_sticks()) %>%
+    m_set_style(style = m_style_stick()) %>%
     # Rotate the scene by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }

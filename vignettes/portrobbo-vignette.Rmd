@@ -27,8 +27,8 @@ The package contains four functions:
 <li>graph_jitter</li>
 <li>graph_cap</li>
 <li>protein_cartoon</li>
-<li>protein_sticks</li>
-<li>protein_spheres</li></ul>
+<li>protein_stick</li>
+<li>protein_sphere</li></ul>
 
 In this vignette you'll learn the application of these functions. First we load the needed packages and the dataset.
 
@@ -89,6 +89,6 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
   theme_minimal()
 ```
 
-## protein_cartoon, protein_sticks and protein_spheres
+## protein_cartoon, protein_stick and protein_sphere
 
 The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. The colors are modelled after the PyMol default colors.

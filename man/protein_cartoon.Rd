@@ -7,7 +7,7 @@
 protein_cartoon(mydata)
 }
 \arguments{
-\item{mydata}{File path to pdb file}
+\item{mydata}{R object of PDB file made using readLines}
 }
 \value{
 3D structural visualization of the protein in cartoon style

@@ -38,10 +38,10 @@ graph_cap
 protein_cartoon
 </li>
 <li>
-protein_sticks
+protein_stick
 </li>
 <li>
-protein_spheres
+protein_sphere
 </li>
 </ul>
 
@@ -138,7 +138,7 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
 
 <img src="man/figures/README-graph functions-1.png" width="100%" />
 
-## protein_cartoon, protein_sticks and protein_spheres
+## protein_cartoon, protein_stick and protein_sphere
 
 The last three functions use the r3dmol package to create 3D interactive
 visualizations of proteins. Each function shows a different style of

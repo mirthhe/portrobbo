@@ -1,4 +1,4 @@
-#' protein_spheres
+#' protein_sphere
 #'
 #' @param mydata R object of PDB file made using readLines
 #'
@@ -7,8 +7,8 @@
 #' @import r3dmol
 #'
 #' @examples
-#' protein_spheres(kinesin)
-protein_spheres <- function(mydata){
+#' protein_sphere(kinesin)
+protein_sphere <- function(mydata){
   r3dmol(
     viewer_spec = m_viewer_spec(
       # How far user can zoom in
@@ -22,7 +22,7 @@ protein_spheres <- function(mydata){
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of structures
-    m_set_style(style = m_style_sticks()) %>%
+    m_set_style(style = m_style_sphere()) %>%
     # Rotate the scene by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }
