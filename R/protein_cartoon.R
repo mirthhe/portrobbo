@@ -1,6 +1,6 @@
 #' protein_cartoon
 #'
-#' @param mydata File path to pdb file
+#' @param mydata R object of PDB file made using readLines
 #'
 #' @return 3D structural visualization of the protein in cartoon style
 #' @export

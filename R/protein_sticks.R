@@ -1,6 +1,6 @@
 #' protein_sticks
 #'
-#' @param mydata File path to pdb file
+#' @param mydata R object of PDB file made using readLines
 #'
 #' @return 3D structural visualization of the protein in stick style
 #' @export
