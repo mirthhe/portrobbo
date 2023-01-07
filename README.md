@@ -5,7 +5,7 @@
 
 The functions within this package can be used to speed up work and
 shorten code. It has originally been used to support a portfolio and the
-assignments within it but the function are short and to the point,
+assignments within it but the functions are short and to the point,
 making them useful for various situations.
 
 ## Installation
@@ -43,6 +43,9 @@ protein_stick
 <li>
 protein_sphere
 </li>
+<li>
+protein_visual
+</li>
 </ul>
 
 To show the use of these functions we first load the needed packages and
@@ -52,7 +55,6 @@ dataset.
 library(portrobbo)
 library(ggplot2)
 library(dplyr)
-covid19 <- read.csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
 ```
 
 ## uniq_val
@@ -138,10 +140,10 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
 
 <img src="man/figures/README-graph functions-1.png" width="100%" />
 
-## protein_cartoon, protein_stick and protein_sphere
+## protein_cartoon, protein_stick, protein_sphere and protein_visual
 
 The last three functions use the r3dmol package to create 3D interactive
 visualizations of proteins. Each function shows a different style of
 visualization. The input is a PDB file turned into an R object using the
-readLines() function. The colors are modelled after the PyMol default
+readLines() function. The colors are modeled after the PyMol default
 colors.

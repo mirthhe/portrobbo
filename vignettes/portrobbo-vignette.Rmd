@@ -28,7 +28,9 @@ The package contains four functions:
 <li>graph_cap</li>
 <li>protein_cartoon</li>
 <li>protein_stick</li>
-<li>protein_sphere</li></ul>
+<li>protein_sphere</li>
+<li>protein_visual</li>
+</ul>
 
 In this vignette you'll learn the application of these functions. First we load the needed packages and the dataset.
 
@@ -36,7 +38,6 @@ In this vignette you'll learn the application of these functions. First we load 
 library(portrobbo)
 library(ggplot2)
 library(dplyr)
-covid19 <- read.csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
 ```
 
 # uniq_val
@@ -89,6 +90,6 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
   theme_minimal()
 ```
 
-## protein_cartoon, protein_stick and protein_sphere
+## protein_cartoon, protein_stick, protein_sphere and protein_visual
 
 The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. The colors are modelled after the PyMol default colors.
