@@ -26,22 +26,22 @@ protein_visual <- function(pdbobject){
     # Set style of atoms
     m_set_style(
       sel = m_sel(elem = "C"), # Style carbon
-      style = c(m_style_stick(color = "#33ff33"), m_style_sphere(opacity = 0.6, color = "#33ff33"))) %>%
+      style = c(m_style_stick(color = "#33ff33"), m_style_sphere(opacity = 0.7, color = "#33ff33"))) %>%
     m_set_style(
       sel = m_sel(elem = "N"), # Style nitrogen
-      style = c(m_style_stick(color = "#3333ff"), m_style_sphere(opacity = 0.6, color = "#3333ff"))) %>%
+      style = c(m_style_stick(color = "#3333ff"), m_style_sphere(opacity = 0.7, color = "#3333ff"))) %>%
     m_set_style(
       sel = m_sel(elem = "O"), # Style oxygen
-      style = c(m_style_stick(color = "#ff4c4c"), m_style_sphere(opacity = 0.6, color = "#ff4c4c"))) %>%
+      style = c(m_style_stick(color = "#ff4c4c"), m_style_sphere(opacity = 0.7, color = "#ff4c4c"))) %>%
     m_set_style(
       sel = m_sel(elem = "S"), # Style sulfur
-      style = c(m_style_stick(color = "#e5c53f"), m_style_sphere(opacity = 0.6, color = "#e5c53f"))) %>%
+      style = c(m_style_stick(color = "#e5c53f"), m_style_sphere(opacity = 0.7, color = "#e5c53f"))) %>%
     m_set_style(
       sel = m_sel(elem = "P"), # Style phosphorus
-      style = c(m_style_stick(color = "#ff7f00"), m_style_sphere(opacity = 0.6, color = "#ff7f00"))) %>%
+      style = c(m_style_stick(color = "#ff7f00"), m_style_sphere(opacity = 0.7, color = "#ff7f00"))) %>%
     m_set_style(
       sel = m_sel(elem = "MG"), # Style magnesium
-      style = c(m_style_stick(color = "#8aff00"), m_style_sphere(opacity = 0.6, color = "#8aff00"))) %>%
+      style = c(m_style_stick(color = "#8aff00"), m_style_sphere(opacity = 0.7, color = "#8aff00"))) %>%
     # Rotate by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }
