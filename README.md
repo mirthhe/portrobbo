@@ -20,7 +20,7 @@ devtools::install_github("mirthhe/portrobbo")
 
 # Functions
 
-The package contains four different functions:
+The package currently contains the following functions:
 <ul>
 <li>
 uniq_val
@@ -30,9 +30,6 @@ save_csv_rds
 </li>
 <li>
 graph_jitter
-</li>
-<li>
-graph_cap
 </li>
 <li>
 protein_cartoon
@@ -106,26 +103,20 @@ following.
 save_csv_rds(covid19_2020, "covid19_2020")
 ```
 
-## graph_jitter and graph_cap
+## graph_jitter
 
 With the data inspected, extracted and saved, graphs can be made. The
 ggplot2 package contains all the necessary functions to make a graph.
 It’s functions have a lot of different input options for a lot of
 different graphs. This means the code for a simple graph can become
-quite long. This is where graph_jitter() and graph_cap() come in. The
-ggplot2 function position_jitter() uses multiple inputs to create a
-slight jitter to the datapoints. This is useful when data overlap makes
-the graph hard to read. The graph_jitter() function simplifies this
-function by only needing one input which will work for both the height
-and width of the jitter. It also sets the see so keep jitter consistent
-throughout the analysis.
-
-The graph_cap() function was made using the str_wrap() function from the
-stringr package. When writing a caption in a ggplot2 graph, it doesn’t
-automatically cut off at the width of the graph. With graph_cap() the
-caption will automatically be cut and moved to the next line at 80
-characters. This way the caption always fits in the graph. In the
-following code chunk both graph_jitter() and graph_cap() are shown.
+quite long. This is where graph_jitter() comes in. The ggplot2 function
+position_jitter() uses multiple inputs to create a slight jitter to the
+datapoints. This is useful when data overlap makes the graph hard to
+read. The graph_jitter() function simplifies this function by only
+needing one input which will work for both the height and width of the
+jitter. It also sets the seed to keep jitter consistent throughout the
+analysis. In the following code chunk the use of graph_jitter() is
+shown.
 
 ``` r
 covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
@@ -133,12 +124,13 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
   geom_point(aes(color = countriesAndTerritories), position = graph_jitter(0.3)) +
   labs(title = "COVID19 in summer of 2020",
        x = "Date",
-       y = "COVID19 related deaths",
-       caption = graph_cap("Figure 1. Scatterplot showing the COVID19 related deaths in summer of 2020 in Germany and France.")) +
+       y = "COVID19 related deaths") +
   theme_minimal()
 ```
 
 <img src="man/figures/README-graph functions-1.png" width="100%" />
+*Figure 1. Scatterplot showing the COVID19 related deaths in summer of
+2020 in Germany and France.*
 
 ## protein_cartoon, protein_stick, protein_sphere and protein_visual
 
