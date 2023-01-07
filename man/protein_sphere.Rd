@@ -4,10 +4,10 @@
 \alias{protein_sphere}
 \title{protein_sphere}
 \usage{
-protein_sphere(mydata)
+protein_sphere(pdbobject)
 }
 \arguments{
-\item{mydata}{R object of PDB file made using readLines}
+\item{pdbobject}{R object of PDB file made using readLines}
 }
 \value{
 3D structural visualization of the protein in sphere style with PyMOL colouring

@@ -4,10 +4,10 @@
 \alias{protein_stick}
 \title{protein_stick}
 \usage{
-protein_stick(mydata)
+protein_stick(pdbobject)
 }
 \arguments{
-\item{mydata}{R object of PDB file made using readLines}
+\item{pdbobject}{R object of PDB file made using readLines}
 }
 \value{
 3D structural visualization of the protein in stick style

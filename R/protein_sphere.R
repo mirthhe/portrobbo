@@ -1,6 +1,6 @@
 #' protein_sphere
 #'
-#' @param mydata R object of PDB file made using readLines
+#' @param pdbobject R object of PDB file made using readLines
 #'
 #' @return 3D structural visualization of the protein in sphere style with PyMOL colouring
 #' @export
@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' protein_sphere(kinesin)
-protein_sphere <- function(mydata){
+protein_sphere <- function(pdbobject){
   r3dmol(
     viewer_spec = m_viewer_spec(
       # How far user can zoom in
@@ -20,7 +20,7 @@ protein_sphere <- function(mydata){
       disableFog = TRUE,
       backgroundColor = "black")) %>%
     # Adding the protein
-    m_add_model(data = mydata, format = "pdb") %>%
+    m_add_model(data = pdbobject, format = "pdb") %>%
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of atoms

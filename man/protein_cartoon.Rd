@@ -4,10 +4,10 @@
 \alias{protein_cartoon}
 \title{protein_cartoon}
 \usage{
-protein_cartoon(mydata)
+protein_cartoon(pdbobject)
 }
 \arguments{
-\item{mydata}{R object of PDB file made using readLines}
+\item{pdbobject}{R object of PDB file made using readLines}
 }
 \value{
 3D structural visualization of the protein in cartoon style with PyMOL colouring

@@ -1,6 +1,6 @@
 #' protein_cartoon
 #'
-#' @param mydata R object of PDB file made using readLines
+#' @param pdbobject R object of PDB file made using readLines
 #'
 #' @return 3D structural visualization of the protein in cartoon style with PyMOL colouring
 #' @export
@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' protein_cartoon(kinesin)
-protein_cartoon <- function(mydata){
+protein_cartoon <- function(pdbobject){
   r3dmol(
     viewer_spec = m_viewer_spec(
       # How far user can zoom in
@@ -20,12 +20,10 @@ protein_cartoon <- function(mydata){
       disableFog = TRUE,
       backgroundColor = "black")) %>%
     # Adding the protein
-    m_add_model(data = mydata, format = "pdb") %>%
+    m_add_model(data = pdbobject, format = "pdb") %>%
     # Center the protein at first
     m_zoom_to() %>%
     # Set style of structures
-    m_set_style(style = m_style_cartoon(color = "#3aff3a")) %>%
-    # Set style of specific selection
     m_set_style(
       sel = m_sel(ss = "s"), # Style beta sheets
       style = m_style_cartoon(color = "#3aff3a", arrows = TRUE)) %>%
