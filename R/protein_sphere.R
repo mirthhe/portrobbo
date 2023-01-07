@@ -42,6 +42,9 @@ protein_sphere <- function(mydata){
     m_set_style(
       sel = m_sel(elem = "MG"), # Style magnesium
       style = m_style_sphere(color = "#8aff00")) %>%
+    m_set_style(
+      sel = m_sel(elem = "H"), # Style hydrogen
+      style = m_style_sphere(color = "#E5E5E5")) %>%
     # Rotate by given angle on given axis
     m_rotate(angle = 90, axis = "y")
 }
