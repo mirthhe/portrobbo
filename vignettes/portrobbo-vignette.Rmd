@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-This vignette describes the use of the 'portrobbo' package. The functions within this package can be used to speed up work and shorten code. It has originally been used to support a [portfolio](mirthhe.github.io) and the assignments within it but the function are short and to the point, making them useful for various situations.
+This vignette describes the use of the 'portrobbo' package. The functions within this package can be used to speed up work and shorten code. It has originally been used to support a [portfolio](https://mirthhe.github.io/) and the assignments within it but the function are short and to the point, making them useful for various situations.
 
 ## Installation
 

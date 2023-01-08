@@ -5,9 +5,9 @@
 
 The functions within this package can be used to speed up work and
 shorten code. It has originally been made to support a
-[portfolio](mirthhe.github.io) and the assignments within it but the
-functions are short and to the point, making them useful for various
-situations.
+[portfolio](https://mirthhe.github.io/) and the assignments within it
+but the functions are short and to the point, making them useful for
+various situations.
 
 ## Installation
 
