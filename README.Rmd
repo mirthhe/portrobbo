@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -36,8 +37,8 @@ The package currently contains the following functions:
 <li>graph_jitter</li>
 <li>protein visualizations:<ul>
 <li>protein_cartoon</li>
-<li>protein_stick</li>
 <li>protein_sphere</li>
+<li>protein_stick</li>
 <li>protein_visual</li></ul></ul>
 
 To show the use of the package we first load the needed libraries.
@@ -49,6 +50,7 @@ library(dplyr)
 ```
 
 The package also contains the following data objects:
+
 [COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda)
 <ul>
 <li>A dataframe containing COVID19 cases and deaths in multiple European countries</li>
@@ -56,6 +58,7 @@ The package also contains the following data objects:
 <li>Imported using [this code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)</li>
 <li>Used to show the functionality of uniq_val(), save_csv_rds() and graph_jitter()</li>
 </ul>
+
 [Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda)
 <ul>
 <li>R object containing the PDBx file 3COB</li>
@@ -86,7 +89,9 @@ After inspecting the data you might have made a few changes in the R object, lik
 
 ```{r data extraction}
 # Let's say we only want the data of summer 2020 for the Germany and France
-covid19_2020 <- covid19 %>% filter(countriesAndTerritories == c("Germany", "France"), year == 2020, month == c(6:8))
+covid19_2020 <- covid19 %>% filter(countriesAndTerritories == 
+                                     c("Germany", "France"), 
+                                   year == 2020, month == c(6:8))
 covid19_2020$dateRep <- as.Date(covid19_2020$dateRep, "%d/%m/%y")
 ```
 
@@ -110,9 +115,49 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
        y = "COVID19 related deaths") +
   theme_minimal()
 ```
-_Figure 1. Scatterplot showing the COVID19 related deaths in summer of 2020 in Germany and France._
 
-## protein_cartoon, protein_stick, protein_sphere and protein_visual
+<i>Figure 1. Scatterplot showing the COVID19 related deaths in summer of 2020 in Germany and France.</i>
 
-The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. The colors are modeled after the PyMol default colors.
+## Protein visualization fucntions
 
+The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. For this example we will be looking at my favorite protein, kinesin, which is included in the package. The PDBx file for kinesin was taken from [3COB](https://www.rcsb.org/structure/3COB) in the RCSB database. The colors are modeled after the PyMol default colors.
+
+### protein_cartoon
+
+The first visualization is the cartoon style. It is a simplified version where sidechains are ignored. Only the backbone is shown with the alpha helices as coils and the beta sheets as arrows.
+
+```{r protein_cartoon}
+protein_cartoon(kinesin)
+```
+
+<i>Figure 2. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in cartoon style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
+
+### protein_sphere
+
+Spheres, unlike cartoon, shows the atoms. Each atom is shown as a sphere. The size of each sphere is decided by the atoms electron orbitals. This can be used to show packing and spheric hindrance but doesn't show the interior. The colors indicate different atoms, in the default settings carbon atoms are green, nitrogen is blue, oxygen is red, etc.
+
+```{r protein_sphere}
+protein_sphere(kinesin)
+```
+
+<i>Figure 3. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in sphere style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
+
+### protein_stick
+
+The last visual style will be sticks, this shows the chemical structure. The colors still indicate the same atoms as they did for the sphere style.
+
+```{r protein_stick}
+protein_stick(kinesin)
+```
+
+<i> Figure 4. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in stick style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
+
+### protein_visual
+
+A big downside of these visualizations is how none of them show a complete picture. Cartoon style doesn't show the atoms, sphere styles doesn't show the chemical structure and stick style doesn't show the sferic hindrance. Because of this, one more function was made, to combine the stick and sphere visuals in a way that clearly shows both of them. To do this they were combined in one function with the stick visual on full opacity and the sphere visual on an opacity of 0.7. The clarity of the spherical style could be better and the overlap definitely has a negative effect on the readability, but the combination still gives a good overview of the protein's 3D structure.
+
+```{r protein_visual}
+protein_visual(kinesin)
+```
+
+<i> Figure 5. Figure 9.7 Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in stick and spherical style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
