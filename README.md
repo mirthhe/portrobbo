@@ -4,9 +4,10 @@
 # The portrobbo package :anchor:
 
 The functions within this package can be used to speed up work and
-shorten code. It has originally been made to support a portfolio and the
-assignments within it but the functions are short and to the point,
-making them useful for various situations.
+shorten code. It has originally been made to support a
+[portfolio](mirthhe.github.io) and the assignments within it but the
+functions are short and to the point, making them useful for various
+situations.
 
 ## Installation
 
@@ -57,24 +58,25 @@ library(ggplot2)
 library(dplyr)
 ```
 
-The package also contains the following data objects:
+The package also contains two data objects:
 
-[COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda) -
-A dataframe containing COVID19 cases and deaths in multiple European
-countries - Data came from the
-[ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) -
-Imported using [this
-code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R) -
-Used to show the functionality of uniq_val(), save_csv_rds() and
-graph_jitter()
+[COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda),
+a dataframe containing COVID19 cases and deaths in multiple European
+countries. The data came from the
+[ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide).
+It was imported using [this
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)
+and is used to show the functionality of uniq_val(), save_csv_rds() and
+graph_jitter().
 
-[Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda) -
-R object containing the PDBx file 3COB -
-[Data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb)
-came from the [RCSB PDB](https://www.rcsb.org/structure/3COB) - Imported
-using [this
-code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R) -
-Used to show the functionality of the protein visualizing
+[Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda),
+an R object containing the PDBx file 3COB. The
+[data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb)
+came from the [RCSB PDB](https://www.rcsb.org/structure/3COB). It was
+imported using [this
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R)
+and is used to show the functionality of the protein visualizing
+functions.
 
 ## uniq_val
 
