@@ -51,20 +51,16 @@ library(dplyr)
 The package also contains the following data objects:
 
 [COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda)
-<ul>
-<li>A dataframe containing COVID19 cases and deaths in multiple European countries</li>
-<li>Data came from the [ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)</li>
-<li>Imported using [this code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)</li>
-<li>Used to show the functionality of uniq_val(), save_csv_rds() and graph_jitter()</li>
-</ul>
+- A dataframe containing COVID19 cases and deaths in multiple European countries
+- Data came from the [ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)
+- Imported using [this code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)
+- Used to show the functionality of uniq_val(), save_csv_rds() and graph_jitter()
 
 [Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda)
-<ul>
-<li>R object containing the PDBx file 3COB</li>
-<li>[Data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb) came from the [RCSB PDB](https://www.rcsb.org/structure/3COB)</li>
-<li>Imported using [this code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R)</li>
-<li>Used to show the functionality of the protein visualising</li>
-</ul>
+- R object containing the PDBx file 3COB
+- [Data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb) came from the [RCSB PDB](https://www.rcsb.org/structure/3COB)
+- Imported using [this code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R)
+- Used to show the functionality of the protein visualizing
 
 ## uniq_val
 
@@ -117,9 +113,9 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
 
 <i>Figure 1. Scatterplot showing the COVID19 related deaths in summer of 2020 in Germany and France.</i>
 
-## Protein visualization fucntions
+## Protein visualization functions
 
-The last three functions use the r3dmol package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. For this example we will be looking at my favorite protein, kinesin, which is included in the package. The PDBx file for kinesin was taken from [3COB](https://www.rcsb.org/structure/3COB) in the RCSB database. The colors are modeled after the PyMol default colors.
+The last three functions use the [r3dmol](https://github.com/swsoyee/r3dmol) package to create 3D interactive visualizations of proteins. Each function shows a different style of visualization. The input is a PDB file turned into an R object using the readLines() function. For this example we will be looking at my favorite protein, kinesin, which is included in the package. The PDBx file for kinesin was taken from [3COB](https://www.rcsb.org/structure/3COB) in the RCSB database. The colors are modeled after the PyMol default colors.
 
 Because of the limitations of this README file when it comes to showing HTML output, the results of these functions will not be shown in this page. To see the interactive visualizations visit [this page](https://mirthhe.github.io/Workflows_Portfolio_Free.html#applying-in-r). 
 
@@ -131,8 +127,6 @@ The first visualization is the cartoon style. It is a simplified version where s
 protein_cartoon(kinesin)
 ```
 
-<i>Figure 2. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in cartoon style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
-
 ### protein_sphere
 
 Spheres, unlike cartoon, shows the atoms. Each atom is shown as a sphere. The size of each sphere is decided by the atoms electron orbitals. This can be used to show packing and spheric hindrance but doesn't show the interior. The colors indicate different atoms, in the default settings carbon atoms are green, nitrogen is blue, oxygen is red, etc.
@@ -140,8 +134,6 @@ Spheres, unlike cartoon, shows the atoms. Each atom is shown as a sphere. The si
 ```{r protein_sphere, eval=FALSE}
 protein_sphere(kinesin)
 ```
-
-<i>Figure 3. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in sphere style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
 
 ### protein_stick
 
@@ -151,8 +143,6 @@ The last visual style will be sticks, this shows the chemical structure. The col
 protein_stick(kinesin)
 ```
 
-<i> Figure 4. Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in stick style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>
-
 ### protein_visual
 
 A big downside of these visualizations is how none of them show a complete picture. Cartoon style doesn't show the atoms, sphere styles doesn't show the chemical structure and stick style doesn't show the sferic hindrance. Because of this, one more function was made, to combine the stick and sphere visuals in a way that clearly shows both of them. To do this they were combined in one function with the stick visual on full opacity and the sphere visual on an opacity of 0.7. The clarity of the spherical style could be better and the overlap definitely has a negative effect on the readability, but the combination still gives a good overview of the protein's 3D structure.
@@ -160,5 +150,3 @@ A big downside of these visualizations is how none of them show a complete pictu
 ```{r protein_visual, eval=FALSE}
 protein_visual(kinesin)
 ```
-
-<i> Figure 5. Figure 9.7 Kinesin as described by the 3COB PDBx file from wwPDB. Visualised in stick and spherical style using the r3dmol package and PyMOL color scheme. Using a click and drag method the image can be turned and by scrolling the image can be zoomed in and out.</i>

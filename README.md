@@ -59,42 +59,22 @@ library(dplyr)
 
 The package also contains the following data objects:
 
-[COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda)
-<ul>
-<li>
+[COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda) -
 A dataframe containing COVID19 cases and deaths in multiple European
-countries
-</li>
-<li>
-Data came from the
-[ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)
-</li>
-<li>
+countries - Data came from the
+[ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) -
 Imported using [this
-code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)
-</li>
-<li>
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R) -
 Used to show the functionality of uniq_val(), save_csv_rds() and
 graph_jitter()
-</li>
-</ul>
-[Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda)
-<ul>
-<li>
-R object containing the PDBx file 3COB
-</li>
-<li>
+
+[Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda) -
+R object containing the PDBx file 3COB -
 [Data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb)
-came from the [RCSB PDB](https://www.rcsb.org/structure/3COB)
-</li>
-<li>
-Imported using [this
-code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R)
-</li>
-<li>
-Used to show the functionality of the protein visualising
-</li>
-</ul>
+came from the [RCSB PDB](https://www.rcsb.org/structure/3COB) - Imported
+using [this
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R) -
+Used to show the functionality of the protein visualizing
 
 ## uniq_val
 
@@ -177,16 +157,17 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
 <i>Figure 1. Scatterplot showing the COVID19 related deaths in summer of
 2020 in Germany and France.</i>
 
-## Protein visualization fucntions
+## Protein visualization functions
 
-The last three functions use the r3dmol package to create 3D interactive
-visualizations of proteins. Each function shows a different style of
-visualization. The input is a PDB file turned into an R object using the
-readLines() function. For this example we will be looking at my favorite
-protein, kinesin, which is included in the package. The PDBx file for
-kinesin was taken from [3COB](https://www.rcsb.org/structure/3COB) in
-the RCSB database. The colors are modeled after the PyMol default
-colors.
+The last three functions use the
+[r3dmol](https://github.com/swsoyee/r3dmol) package to create 3D
+interactive visualizations of proteins. Each function shows a different
+style of visualization. The input is a PDB file turned into an R object
+using the readLines() function. For this example we will be looking at
+my favorite protein, kinesin, which is included in the package. The PDBx
+file for kinesin was taken from
+[3COB](https://www.rcsb.org/structure/3COB) in the RCSB database. The
+colors are modeled after the PyMol default colors.
 
 Because of the limitations of this README file when it comes to showing
 HTML output, the results of these functions will not be shown in this
@@ -203,11 +184,6 @@ helices as coils and the beta sheets as arrows.
 protein_cartoon(kinesin)
 ```
 
-<i>Figure 2. Kinesin as described by the 3COB PDBx file from wwPDB.
-Visualised in cartoon style using the r3dmol package and PyMOL color
-scheme. Using a click and drag method the image can be turned and by
-scrolling the image can be zoomed in and out.</i>
-
 ### protein_sphere
 
 Spheres, unlike cartoon, shows the atoms. Each atom is shown as a
@@ -221,11 +197,6 @@ red, etc.
 protein_sphere(kinesin)
 ```
 
-<i>Figure 3. Kinesin as described by the 3COB PDBx file from wwPDB.
-Visualised in sphere style using the r3dmol package and PyMOL color
-scheme. Using a click and drag method the image can be turned and by
-scrolling the image can be zoomed in and out.</i>
-
 ### protein_stick
 
 The last visual style will be sticks, this shows the chemical structure.
@@ -235,11 +206,6 @@ style.
 ``` r
 protein_stick(kinesin)
 ```
-
-<i> Figure 4. Kinesin as described by the 3COB PDBx file from wwPDB.
-Visualised in stick style using the r3dmol package and PyMOL color
-scheme. Using a click and drag method the image can be turned and by
-scrolling the image can be zoomed in and out.</i>
 
 ### protein_visual
 
@@ -257,8 +223,3 @@ still gives a good overview of the protein’s 3D structure.
 ``` r
 protein_visual(kinesin)
 ```
-
-<i> Figure 5. Figure 9.7 Kinesin as described by the 3COB PDBx file from
-wwPDB. Visualised in stick and spherical style using the r3dmol package
-and PyMOL color scheme. Using a click and drag method the image can be
-turned and by scrolling the image can be zoomed in and out.</i>
