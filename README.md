@@ -1,17 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# portrobbo
+# The portrobbo package :anchor:
 
 The functions within this package can be used to speed up work and
-shorten code. It has originally been used to support a portfolio and the
+shorten code. It has originally been made to support a portfolio and the
 assignments within it but the functions are short and to the point,
 making them useful for various situations.
 
 ## Installation
 
-You can install the development version of portrobbo from
-[GitHub](https://github.com/) with:
+The development version of portrobbo can be installed from
+[GitHub](https://github.com/) by using:
 
 ``` r
 # install.packages("devtools")
@@ -20,39 +20,34 @@ devtools::install_github("mirthhe/portrobbo")
 
 # Functions
 
-The package currently contains the following functions:
-<ul>
-<li>
-uniq_val
-</li>
-<li>
-save_csv_rds
-</li>
-<li>
-graph_jitter
-</li>
-<li>
-protein_cartoon
-</li>
-<li>
-protein_stick
-</li>
-<li>
-protein_sphere
-</li>
-<li>
-protein_visual
-</li>
-</ul>
+The package currently contains the following functions: \* uniq_val \*
+save_csv_rds \* graph_jitter \* protein visualizations: \*
+protein_cartoon \* protein_stick \* protein_sphere \* protein_visual
 
-To show the use of these functions we first load the needed packages and
-dataset.
+To show the use of the package we first load a few needed libraries.
 
 ``` r
 library(portrobbo)
 library(ggplot2)
 library(dplyr)
 ```
+
+The package also contains the following data objects: \*
+[COVID19](https://github.com/mirthhe/portrobbo/blob/main/data/covid19.rda)
+\* A dataframe containing COVID19 cases and deaths in multiple European
+countries \* Data came from the
+[ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)
+\* Imported using [this
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/covid19.R)
+\* Used to show the functionality of uniq_val(), save_csv_rds() and
+graph_jitter() \*
+[Kinesin](https://github.com/mirthhe/portrobbo/blob/main/data/kinesin.rda)
+\* R object containing the PDBx file 3COB \*
+[Data](https://github.com/mirthhe/portrobbo/blob/main/data-raw/3cob.pdb)
+came from the [RCSB PDB](https://www.rcsb.org/structure/3COB) \*
+Imported using [this
+code](https://github.com/mirthhe/portrobbo/blob/main/data-raw/kinesin.R)
+\* Used to show the functionality of the protein visualizing functions
 
 ## uniq_val
 
@@ -129,6 +124,7 @@ covid19_2020 %>% ggplot(aes(x = dateRep, y = deaths)) +
 ```
 
 <img src="man/figures/README-graph functions-1.png" width="100%" />
+
 *Figure 1. Scatterplot showing the COVID19 related deaths in summer of
 2020 in Germany and France.*
 
